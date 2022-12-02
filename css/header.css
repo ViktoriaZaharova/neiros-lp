@@ -1,0 +1,209 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 24px 0;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 158px;
+}
+.logo img {
+  width: 100%;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.btn-search__header {
+  width: 15px;
+  height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("../img/search.svg") no-repeat center;
+  background-size: 100%;
+}
+.btn-search__header.click {
+  background: transparent;
+}
+.btn-search__header.click::before, .btn-search__header.click:after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 2px;
+  border-radius: 3px;
+  background: #111;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+.btn-search__header.click::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.btn-search__header.click::after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.form-search__header {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin: 30px 0 0;
+  width: 560px;
+  display: none;
+}
+.form-search__header label {
+  margin: 0;
+}
+.form-search__header input {
+  font-size: 14px;
+  color: #595959;
+  padding: 0 32px 0 24px;
+  height: 40px;
+  background: #fff;
+}
+.form-search__header input::-webkit-input-placeholder {
+  color: #595959;
+}
+.form-search__header input::-moz-placeholder {
+  color: #595959;
+}
+.form-search__header input:-ms-input-placeholder {
+  color: #595959;
+}
+.form-search__header input::-ms-input-placeholder {
+  color: #595959;
+}
+.form-search__header input::placeholder {
+  color: #595959;
+}
+.form-search__header button {
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 15px;
+  height: 15px;
+}
+
+.nav-menu {
+  margin: 0 auto 0 60px;
+}
+
+.menu.navbar-nav {
+  font-size: 16px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.menu.navbar-nav > li {
+  margin: 0 20px 0 0;
+}
+.menu.navbar-nav > li:last-child {
+  margin: 0;
+}
+.menu.navbar-nav > li > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+  color: #111;
+  padding: 8.5px 10px;
+}
+.menu.navbar-nav > li > a:hover {
+  background: #cdeff9;
+  color: #111;
+}
+
+.dropdown-toggle::after {
+  border: none;
+  margin: 0 0 0 5px;
+  background: url("../img/arrow-down-menu.svg") no-repeat center;
+  background-size: 10px;
+  width: 10px;
+  height: 8px;
+}
+
+.phone {
+  font-weight: bold;
+  color: #111;
+}
+.phone:hover {
+  color: #00b9ee;
+}
+
+.user-menu__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-weight: bold;
+  margin: 0 30px;
+}
+.user-menu__navigation li {
+  margin: 0 30px 0 0;
+}
+.user-menu__navigation li:last-child {
+  margin: 0;
+}
+.user-menu__navigation a {
+  color: #111;
+}
+.user-menu__navigation a:hover {
+  color: #00b9ee;
+}
