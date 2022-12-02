@@ -48,3 +48,21 @@ $('.video-reviews-slider').slick({
 });
 
 
+$(document).ready(function () {
+	var element = document.getElementById("scroll-section");
+	var cnt = 0;
+
+	document.addEventListener('wheel', function (event) {
+		event = event || window.event;
+		var y = event.deltaY || event.detail || event.wheelDelta, val = 0.1, min = 0, max = 0;
+
+		if (y > 0) {
+			cnt = cnt - 1;
+			element.style.transform = 'translate(' + cnt + '%)';
+		}
+		if (y < 0) {
+			cnt = cnt + 1;
+			element.style.transform = 'translate(' + cnt + '%)';
+		}
+	});
+});
