@@ -44,7 +44,7 @@ $('.video-reviews-slider').slick({
 	appendArrows: '.video-reviews-slider__nav',
 	prevArrow: '<button type="button" class="slick-prev"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>',
 	nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>',
-	// centerMode: true, 
+	centerMode: true,
 });
 
 
@@ -64,5 +64,54 @@ $(document).ready(function () {
 			cnt = cnt + 1;
 			element.style.transform = 'translate(' + cnt + '%)';
 		}
+	});
+});
+
+// header fixed
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 100) {
+		$('header').addClass('fixed');
+	} else {
+		$('header').removeClass('fixed');
+	}
+});
+// header fixed end
+
+// mobile menu
+$('.btn-burger').on('click', function () {
+	$('.overlay-menu').fadeIn();
+	$('.nav-menu').fadeIn();
+});
+
+$('.nav-menu__close, .overlay-menu').on('click', function () {
+	$('.nav-menu').fadeOut();
+	$('.overlay-menu').fadeOut();
+});
+
+$('.nav-menu .dropdown-toggle').on('click', function () {
+	$(this).toggleClass('click').next('.dropdown-menu').slideToggle();
+});
+
+
+$(".nav-menu .dropdown-toggle").one("click", false);
+
+
+$(document).ready(function () { //плавный скролл
+	$(".navigation-fixed li a").on("click", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		$('.navigation-fixed li a').removeClass('active');
+		$(this).addClass('active');
+
+		//забираем идентификатор бока с атрибута href
+		var id = $(this).attr('href'),
+			headerHeight = $('header').height(),
+			//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+
+		//анимируем переход на расстояние - top за 500 мс
+		$('body,html').animate({ scrollTop: top - headerHeight }, 500);
+		$('.navigation-fixed').addClass('fixed');
 	});
 });

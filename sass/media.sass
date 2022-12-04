@@ -1,18 +1,285 @@
-/*==========  Desktop First  ==========*/
+/*==========	Desktop First	==========*/
 
 /* Large Devices, Wide Screens */
+@media only screen and (max-width: 1310px)
+	.popular-services-box
+		font-size: 15px
+		padding: 20px
+		&__title
+			font-size: 16px
+		&__icon
+			width: 40px
+			height: 40px
+			min-width: 40px
+		&__name
+			width: calc(100% - 40px)
+
+	.all-services
+		padding: 20px
+		font-size: 18px
+
+	.subscribe-article::before
+		width: 45px
+		height: 38px
+
+	.user-menu__navigation
+		margin: 0 10px
+		li
+			margin: 0 10px 0 0
+
+	.menu.navbar-nav > li
+		margin: 0 
+
+	.form-registration
+		max-width: 250px	
+
+	header.fixed .form-registration
+		min-width: 250px	
+
 @media only screen and (max-width: 1200px)
-	
-@media only screen and (max-width: 992px)	
-	
-@media only screen and (max-width: 768px)
+	.h3
+		font-size: 22px
+
+	.price
+		font-size: 15px
+		span
+			font-size: 24px
+
+	.tariffs
+		padding: 70px 0 40px
+		h2
+			margin: 0 0 30px
+
+	.user-card
+		margin: 0 0 30px
+
+	.why-capabilities-analitycs
+		margin: 70px 0 40px
+
+	.clients, .question
+		margin: 70px 0
+		h2
+			margin: 0 0 40px
+
+	.accordion-button
+		font-size: 18px
+
+	.through-analytics-wrapper
+		padding: 40px 30px
+		&__image
+			max-width: 400px
+		&__content
+			width: calc(100% - 400px)
+
+	.through-analytics
+		margin: 70px 0
+
+	.cases h2
+		margin: 0 0 30px
+
+	.examples
+		margin: 70px 0
+
+	.stages-work
+		padding: 70px 0
+		h2
+			margin: 0 0 50px
+
+	.mb-140
+		margin-bottom: 70px
+
+	.capabilities-analitycs-wrapper
+		max-width: 800px
+		padding: 140px 0 0
+
+	.video-wrapper
+		max-width: 600px
+		height: 400px
+
+	.nav-menu
+		display: none
+		position: fixed
+		left: 0
+		top: 0
+		height: 100%
+		overflow-y: auto
+		z-index: 5
+		max-width: 280px
+		width: 100%
+		background: #fff
+		margin: 0
+		padding: 30px
+		&__header, &__footer
+			display: block
+
+
+	.menu.navbar-nav
+		flex-direction: column
+		align-items: flex-start
+		margin: 30px 0
+		>li
+			padding: 0
+			width: 100%
+			margin: 0 0 10px
+			.nav-link
+				width: 100%
+		.dropdown-toggle
+			&::after
+				margin: 0 0 0 auto
+		.dropdown-menu
+			min-width: auto
+			width: 100%
+			padding: 10px
+			position: relative
+			box-shadow: none		
 		
-@media only screen and (max-width: 576px)	
-	
-@media only screen and (max-width: 480px)	
-	
-@media only screen and (max-width: 420px)	
+	header
+		padding: 10px 0
+		.logo
+			margin: 0 auto 0 0
+		&.fixed
+			padding: 10px 0
+			.menu.navbar-nav > li
+				padding: 0
 
-@media only screen and (max-width: 370px)	
+@media only screen and (max-width: 1100px)
+	.tariffs-card
+		.price
+			width: 100%
+			margin: 10px 0 0
+			justify-content: center
+		&__body
+			height: calc(100% - 86.5px)
 
-	
+@media only screen and (max-width: 992px)
+	h2
+		font-size: 24px
+
+	.all-services
+		min-height: 150px
+		span
+			max-width: none
+
+	.box-text, .accordion-body
+		font-size: 15px
+		line-height: 1.4
+
+	.popular-services .box-text
+		margin: 0 0 24px
+
+	.case-box
+		&__title
+			margin: 0 0 10px
+			font-size: 20px
+		&__subtitle
+			margin: 15px 0
+			font-size: 15px
+		.percent
+			margin: 20px 0 0
+			p
+				font-size: 30px
+
+	.clients-logos img
+		max-height: 50px
+
+	.nav-tabs-examples
+		max-width: none
+		margin: 0 0 20px
+		li
+			margin: 0 0 20px
+			.nav-link
+				span
+					padding: 18px 20px
+
+	.stages-work
+		h2
+			margin: 0 0 30px
+
+	.additional-feautures__img
+		margin: 20px auto 0
+
+	.additional-feautures__content
+		h3
+			font-size: 18px
+
+	.additional-feautures__subtitle
+		margin: 0 0 24px
+
+	.additional-feautures
+		.box-text
+			max-width: none
+
+	.decor-image9, .decor-image7
+		top: 0 !important
+
+	.decor-image8
+		bottom: 0
+
+	.additional-feautures h2
+		margin: 0 0 30px
+
+	.details-advantages-box
+		margin: 0 0 40px
+
+	.btn-play
+		width: 50px
+		height: 50px
+
+@media only screen and (max-width: 768px)
+	.through-analytics-wrapper
+		flex-direction: column
+		align-items: center
+		text-align: center
+		padding: 30px 30px 20px
+		.btn
+			margin: 20px auto 0
+		.box-text
+			max-width: none
+		&__image
+			position: relative
+			right: 0
+			top: 0
+			margin: 20px auto 0
+			max-width: 300px
+		&__content
+			width: 100%
+
+	.tariffs-card
+		.btn
+			margin: 20px auto 0
+			width: 100%
+
+	.p-100
+		padding: 70px 0
+
+	.m-100
+		margin: 70px 0
+
+	.mb-140
+		margin-bottom: 50px
+
+@media only screen and (max-width: 576px)
+	.through-analytics, .question, .m-100
+		margin: 50px 0
+
+	.tariffs-card
+		&__body
+			height: auto
+		&__head
+			justify-content: center
+			.h3
+				margin: 0
+
+	.p-100
+		padding: 50px 0
+
+@media only screen and (max-width: 480px)
+
+@media only screen and (max-width: 420px)
+
+@media only screen and (min-width: 1200px)
+	.menu.navbar-nav
+		.dropdown
+			&:hover
+				.dropdown-menu
+					display: block
