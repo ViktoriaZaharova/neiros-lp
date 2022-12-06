@@ -410,6 +410,10 @@ a.color-blue:hover {
   margin-bottom: 22px;
 }
 
+.mb-25 {
+  margin-bottom: 25px;
+}
+
 .mb-30 {
   margin-bottom: 30px;
 }
@@ -418,16 +422,16 @@ a.color-blue:hover {
   margin-bottom: 40px;
 }
 
+.mb-140 {
+  margin-bottom: 140px;
+}
+
 .m-100 {
   margin: 100px 0;
 }
 
 .m-130 {
   margin: 130px 0;
-}
-
-.mb-140 {
-  margin-bottom: 140px;
 }
 
 .m-auto {

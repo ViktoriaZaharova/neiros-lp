@@ -8,12 +8,11 @@ $(document).ready(function () {
 
 	var scene3 = document.getElementById('scene3');
 	var parallaxInstance3 = new Parallax(scene3);
+
+	var scene4 = document.getElementById('scene4');
+	var parallaxInstance4 = new Parallax(scene4);
 });
 // parallax end
-
-// mask phone
-$('[name="phone"]').mask('+7 (999) 999-99-99');
-// mask phone end
 
 // search
 $('.btn-search__header').on('click', function (e) {
@@ -47,7 +46,6 @@ $('.video-reviews-slider').slick({
 	centerMode: true,
 });
 
-
 $(document).ready(function () {
 	var element = document.getElementById("scroll-section");
 	var cnt = 0;
@@ -66,6 +64,7 @@ $(document).ready(function () {
 		}
 	});
 });
+
 
 // header fixed
 $(window).scroll(function () {
@@ -115,3 +114,66 @@ $(document).ready(function () { //плавный скролл
 		$('.navigation-fixed').addClass('fixed');
 	});
 });
+
+$(document).ready(function () {
+	var block_show = null;
+
+	function scrollTracking() {
+		var wt = $(window).scrollTop();
+		var wh = $(window).height();
+		var et = $('.main').offset().top;
+		var eh = $('.main').outerHeight();
+
+		if (wt + wh >= et && wt + wh - eh * 2 <= et + (wh - eh)) {
+			if (block_show == null || block_show == false) {
+				$('.navigation-fixed').removeClass('fixed');
+			}
+			block_show = true;
+		} 
+	}
+
+	$(window).scroll(function () {
+		scrollTracking();
+	});
+
+	$(document).ready(function () {
+		scrollTracking();
+	});
+});
+
+$(document).ready(function () {
+	var block_show = null;
+
+	function scrollTracking() {
+		var wt = $(window).scrollTop();
+		var wh = $(window).height();
+		var et = $('.stages-settings').offset().top;
+		var eh = $('.stages-settings').outerHeight();
+
+		if (wt + wh >= et && wt + wh - eh * 2 <= et + (wh - eh)) {
+			if (block_show == null || block_show == false) {
+				$.each($('.list-stages-settings > li'), function (i, el) {
+					setTimeout(function () {
+						$(el).addClass("active");
+					}, 500 + (i * 500));
+				});
+			}
+			block_show = true;
+		} else {
+			if (block_show == null || block_show == true) {
+				$('.list-stages-settings > li').removeClass('active');
+			}
+			block_show = false;
+		}
+	}
+
+	$(window).scroll(function () {
+		scrollTracking();
+	});
+
+	$(document).ready(function () {
+		scrollTracking();
+	});
+});
+
+new WOW().init();
