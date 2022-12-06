@@ -361,6 +361,12 @@ h1 {
   line-height: 0.98;
 }
 
+.text-body {
+  color: #111;
+  font-size: 55px;
+  font-weight: bold;
+}
+
 h2 {
   width: 100%;
   line-height: 1.22;

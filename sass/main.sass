@@ -45,25 +45,31 @@
 		background-color: #cdeff9
 		height: 100%
 		width: fit-content
-		animation: spin_words 6s infinite
+		animation: spin_words 3.5s infinite
+
+// @keyframes spin_words
+// 	10%
+// 		transform: translateY(102%)
+// 	25%
+// 		transform: translateY(100%)	
+// 	35%
+// 		transform: translateY(202%)	
+// 	50%
+// 		transform: translateY(200%)
+// 	60%
+// 		transform: translateY(302%)	
+// 	75%
+// 		transform: translateY(300%)	
+// 	85%
+// 		transform: translateY(402%)	
+// 	100%
+// 		transform: translateY(400%)	
 
 @keyframes spin_words
-	10%
-		transform: translateY(102%)
-	25%
-		transform: translateY(100%)	
-	35%
-		transform: translateY(202%)	
 	50%
-		transform: translateY(200%)
-	60%
-		transform: translateY(302%)	
-	75%
-		transform: translateY(300%)	
-	85%
-		transform: translateY(402%)	
+		transform: translateY(100%)	
 	100%
-		transform: translateY(400%)	
+		transform: translateY(200%)	
 
 
 .link-all-price
@@ -410,6 +416,7 @@
 .crm-integration-wrapper
 	width: 100%
 	height: 100%
+	max-height: 700px
 	overflow: hidden
 	position: relative
 
@@ -431,12 +438,11 @@
 .crm-integration-scroll
 	width: 100%
 	height: 100%
-	background: url('../img/crm-logos.png') no-repeat center
-	background-size: cover
-	position: absolute
-	min-height: 100%
-	left: 0
-	top: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	img
+		width: 100%
 	
 
 

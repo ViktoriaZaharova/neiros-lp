@@ -8,9 +8,6 @@ $(document).ready(function () {
 
 	var scene3 = document.getElementById('scene3');
 	var parallaxInstance3 = new Parallax(scene3);
-
-	var scene4 = document.getElementById('scene4');
-	var parallaxInstance4 = new Parallax(scene4);
 });
 // parallax end
 
@@ -65,6 +62,24 @@ $(document).ready(function () {
 	});
 });
 
+$(document).ready(function () {
+	var element = document.getElementById("crm-integration-scroll");
+	var cnt = 0;
+
+	document.addEventListener('wheel', function (event) {
+		event = event || window.event;
+		var y = event.deltaY || event.detail || event.wheelDelta, val = 0.1, min = 0, max = 0;
+
+		if (y > 0) {
+			cnt = cnt - 1;
+			element.style.transform = 'translateY(' + cnt + 'px)';
+		}
+		if (y < 0) {
+			cnt = cnt + 1;
+			element.style.transform = 'translateY(' + cnt + 'px)';
+		}
+	});
+});
 
 // header fixed
 $(window).scroll(function () {

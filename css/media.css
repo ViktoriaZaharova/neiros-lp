@@ -198,6 +198,9 @@
   .capabilities-analitycs h2 {
     margin: 0 0 30px;
   }
+  .btn-burger {
+    display: block;
+  }
 }
 @media only screen and (max-width: 1100px) {
   .tariffs-card .price {
@@ -360,6 +363,12 @@
   .list-stages-settings .box-text {
     margin: 0;
   }
+  .crm-integration__content {
+    margin: 100px 0;
+  }
+  .crm-integration-wrapper {
+    max-height: 500px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .through-analytics-wrapper {
@@ -436,7 +445,7 @@
   .video-reviews-slider-item {
     width: 400px;
   }
-  h1 {
+  h1, .text-body {
     font-size: 40px;
   }
   h2 {
@@ -479,6 +488,10 @@
   }
   .list-stages-settings .box-text span {
     margin: 15px 0 0;
+  }
+  .crm-integration__content {
+    max-width: none;
+    margin: 40px 0;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -590,6 +603,9 @@
   .nav-tabs li .nav-link {
     font-size: 15px;
   }
+  .crm-integration-wrapper {
+    max-height: 350px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .form-search__header {
@@ -620,7 +636,7 @@
   header .phone {
     margin: 0;
   }
-  h1 {
+  h1, .text-body {
     font-size: 34px;
   }
   .text-body {
@@ -661,6 +677,12 @@
   }
   .case-box__img {
     height: 250px;
+  }
+  .crm-integration-wrapper {
+    max-height: 300px;
+  }
+  .crm-integration-wrapper:before, .crm-integration-wrapper:after {
+    height: 70px;
   }
 }
 @media only screen and (min-width: 1200px) {

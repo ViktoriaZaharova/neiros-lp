@@ -63,77 +63,29 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation: spin_words 6s infinite;
-          animation: spin_words 6s infinite;
+  -webkit-animation: spin_words 3.5s infinite;
+          animation: spin_words 3.5s infinite;
 }
 
 @-webkit-keyframes spin_words {
-  10% {
-    -webkit-transform: translateY(102%);
-            transform: translateY(102%);
-  }
-  25% {
+  50% {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
   }
-  35% {
-    -webkit-transform: translateY(202%);
-            transform: translateY(202%);
-  }
-  50% {
+  100% {
     -webkit-transform: translateY(200%);
             transform: translateY(200%);
-  }
-  60% {
-    -webkit-transform: translateY(302%);
-            transform: translateY(302%);
-  }
-  75% {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
-  }
-  85% {
-    -webkit-transform: translateY(402%);
-            transform: translateY(402%);
-  }
-  100% {
-    -webkit-transform: translateY(400%);
-            transform: translateY(400%);
   }
 }
 
 @keyframes spin_words {
-  10% {
-    -webkit-transform: translateY(102%);
-            transform: translateY(102%);
-  }
-  25% {
+  50% {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
   }
-  35% {
-    -webkit-transform: translateY(202%);
-            transform: translateY(202%);
-  }
-  50% {
+  100% {
     -webkit-transform: translateY(200%);
             transform: translateY(200%);
-  }
-  60% {
-    -webkit-transform: translateY(302%);
-            transform: translateY(302%);
-  }
-  75% {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
-  }
-  85% {
-    -webkit-transform: translateY(402%);
-            transform: translateY(402%);
-  }
-  100% {
-    -webkit-transform: translateY(400%);
-            transform: translateY(400%);
   }
 }
 .link-all-price {
@@ -605,6 +557,7 @@
 .crm-integration-wrapper {
   width: 100%;
   height: 100%;
+  max-height: 700px;
   overflow: hidden;
   position: relative;
 }
@@ -631,12 +584,18 @@
 .crm-integration-scroll {
   width: 100%;
   height: 100%;
-  background: url("../img/crm-logos.png") no-repeat center;
-  background-size: cover;
-  position: absolute;
-  min-height: 100%;
-  left: 0;
-  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.crm-integration-scroll img {
+  width: 100%;
 }
 
 .stages-settings {
