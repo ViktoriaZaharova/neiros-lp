@@ -45,32 +45,13 @@
 		background-color: #cdeff9
 		height: 100%
 		width: fit-content
-		animation: spin_words 3.5s infinite
-
-// @keyframes spin_words
-// 	10%
-// 		transform: translateY(102%)
-// 	25%
-// 		transform: translateY(100%)	
-// 	35%
-// 		transform: translateY(202%)	
-// 	50%
-// 		transform: translateY(200%)
-// 	60%
-// 		transform: translateY(302%)	
-// 	75%
-// 		transform: translateY(300%)	
-// 	85%
-// 		transform: translateY(402%)	
-// 	100%
-// 		transform: translateY(400%)	
+		animation: spin_words 3s infinite
 
 @keyframes spin_words
 	50%
-		transform: translateY(100%)	
+		transform: translateY(100%)
 	100%
-		transform: translateY(200%)	
-
+		transform: translateY(200%)
 
 .link-all-price
 	@include d-flex()
@@ -107,6 +88,7 @@
 			transform: translate(0,-50%)
 			right: 4px
 			padding: 10px 26px
+			height: 52px
 
 	&__val
 		margin: 13px 0 0
@@ -153,6 +135,10 @@
 		transform: translate(-50%,0)
 		top: 72px
 		bottom: auto
+		&.no-fixed
+			position: absolute
+			top: auto
+			bottom: -26px
 // main end
 
 // advantages
@@ -403,7 +389,6 @@
 .crm-integration
 	overflow: hidden
 	position: relative
-	perspective: 1px
 	h2
 		margin: 0 0 30px
 		max-width: 525px
@@ -417,7 +402,7 @@
 	width: 100%
 	height: 100%
 	max-height: 700px
-	overflow: hidden
+	// overflow: hidden
 	position: relative
 
 	&::before, &::after
@@ -435,15 +420,14 @@
 		height: 150px
 		background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%)
 
-.crm-integration-scroll
+.parallax-window
 	width: 100%
 	height: 100%
 	display: flex
 	align-items: center
 	justify-content: center
-	img
-		width: 100%
-	
+	background: url('../img/crm.svg') no-repeat center 
+	background-size: 100%
 
 
 // stages-settings	
@@ -582,7 +566,6 @@
 
 .case-box
 	width: 100%
-	height: 100%
 	border-radius: 20px
 	box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31)
 	background-color: #fff
@@ -590,7 +573,6 @@
 	border-style: solid
 	border-image-source: linear-gradient(to right, #3652e2, #b4289c)
 	border-image-slice: 0
-	background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
 	background-origin: border-box
 	background-clip: content-box
 	transition: .3s ease
@@ -634,15 +616,15 @@
 			margin: 13px 0 0
 	&:hover
 		background-clip: content-box, border-box
+		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
 		.recommended-article-card__link
-			opacity: 1
+			display: flex
 
 .case-box-wrapper
 	width: 100%
 	height: 100%
 	border-radius: 20px
 	padding: 11px 11px 18px
-
 // cases end	
 
 // why-capabilities-analitycs	
@@ -812,6 +794,7 @@
 	padding: 11px
 	img
 		width: 20px
+		margin-right: -4px
 	&:hover
 		background: $accent
 		transform: scale(1.05) translate(-50%,-50%)
@@ -894,12 +877,12 @@
 
 // recommended-article
 .recommended-article
+	margin: 0 0 100px
 	h2
 		margin: 0 0 30px
 
 .recommended-article-card
 	width: 100%
-	min-height: 390px
 	transition: .3s ease
 	padding: 1px
 	border-radius: 20px
@@ -932,7 +915,7 @@
 		font-size: 15px
 		display: flex
 		margin: 15px 0 0
-		opacity: 0
+		display: none
 		white-space: nowrap
 		img
 			max-width: 11px
@@ -948,13 +931,13 @@
 		line-height: 1.33
 		max-width: 255px
 	&:hover
-		border-image-source: linear-gradient(to top, #3652e2, #b4289c)
+		border-image-source: linear-gradient(to right, #3652e2, #b4289c)
 		border-image-slice: 1
-		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to top, #3652e2, #b4289c)
+		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
 		background-origin: border-box
 		background-clip: content-box, border-box
 		.recommended-article-card__link
-			opacity: 1
+			display: flex
 
 .recommended-article-card-wrapper
 	width: 100%
@@ -997,8 +980,7 @@
 .subscribe-article
 	position: relative
 	width: 100%
-	height: 100%
-	padding: 44px 14px 42px 29px
+	padding: 36px 30px
 	border-radius: 20px
 	box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31)
 	background-image: linear-gradient(57deg, #972ae6, #398add)
@@ -1057,19 +1039,17 @@
 		margin: 0 0 50px
 
 .tariffs-card
-	padding: 2px
 	width: 100%
 	height: 100%
+	padding: 2px
 	border-radius: 20px
 	border-style: solid
-	border-image-source: linear-gradient(to right, #3652e2, #b4289c)
-	border-image-slice: 0
-	background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
-	background-origin: border-box
-	background-clip: content-box
+
 	transition: .3s ease
 	font-size: 17px
+	z-index: 1
 	&__wrapper
+		background: #fff
 		border-radius: 20px
 		box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31)
 		width: 100%
@@ -1106,25 +1086,13 @@
 			max-height: 100%
 	.btn
 		margin: 66px 0 0
-		padding: 2px
-		border-width: 2px
-		border-image-source: linear-gradient(to right, #3652e2, #b4289c)
-		border-image-slice: 0
-		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
-		background-origin: border-box
-		background-clip: content-box
+		padding: 12px 24px
 		border-radius: 10px
-		span
-			padding: 10px 52px
-			position: relative
-			@include d-flex()
-			background: $accent
-			border-radius: 10px
+		background: $accent
+		color: #fff
 		&:hover
-			background-clip: content-box, border-box
-			span
-				background: transparent
-				color: #010101
+			background-image: linear-gradient(to right, #3652e2, #b5289b)
+			color: #fff
 	.box-text
 		margin: 0 0 auto
 	&__body
@@ -1140,6 +1108,10 @@
 				line-height: 1.8
 				padding: 0 0 0 10px
 	&:hover
+		border-image-source: linear-gradient(to right, #3652e2, #b4289c)
+		border-image-slice: 1
+		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
+		background-origin: border-box
 		background-clip: content-box, border-box
 		.tariffs-card__head
 			&::before
@@ -1149,17 +1121,14 @@
 				display: none
 			.img-hover
 				display: block
-		.list-checkbox
-			>li
-				&::before
-					background: url('../img/check-white.svg') no-repeat center, linear-gradient(to right, #3652e2, #b5289b)
-					background-size: 10px, cover
+		// .list-checkbox
+		// 	>li
+		// 		&::before
+		// 			background: url('../img/check-white.svg') no-repeat center, linear-gradient(to right, #3652e2, #b5289b)
+		// 			background-size: 10px, cover
 		.btn
-			background-clip: content-box, border-box
-			span
-				background: transparent
-				color: #010101
-
+			background-image: linear-gradient(to right, #3652e2, #b5289b)
+			color: #fff
 // tariffs	end
 
 // through-analytics

@@ -63,8 +63,8 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation: spin_words 3.5s infinite;
-          animation: spin_words 3.5s infinite;
+  -webkit-animation: spin_words 3s infinite;
+          animation: spin_words 3s infinite;
 }
 
 @-webkit-keyframes spin_words {
@@ -138,6 +138,7 @@
           transform: translate(0, -50%);
   right: 4px;
   padding: 10px 26px;
+  height: 52px;
 }
 .testing-period__val {
   margin: 13px 0 0;
@@ -206,6 +207,11 @@
           transform: translate(-50%, 0);
   top: 72px;
   bottom: auto;
+}
+.navigation-fixed.fixed.no-fixed {
+  position: absolute;
+  top: auto;
+  bottom: -26px;
 }
 
 .advantages {
@@ -539,8 +545,6 @@
 .crm-integration {
   overflow: hidden;
   position: relative;
-  -webkit-perspective: 1px;
-          perspective: 1px;
 }
 .crm-integration h2 {
   margin: 0 0 30px;
@@ -558,7 +562,6 @@
   width: 100%;
   height: 100%;
   max-height: 700px;
-  overflow: hidden;
   position: relative;
 }
 .crm-integration-wrapper::before, .crm-integration-wrapper::after {
@@ -581,7 +584,7 @@
   background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-.crm-integration-scroll {
+.parallax-window {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -593,9 +596,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.crm-integration-scroll img {
-  width: 100%;
+  background: url("../img/crm.svg") no-repeat center;
+  background-size: 100%;
 }
 
 .stages-settings {
@@ -787,7 +789,6 @@
 
 .case-box {
   width: 100%;
-  height: 100%;
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31);
           box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31);
@@ -796,8 +797,6 @@
   border-style: solid;
   border-image-source: linear-gradient(to right, #3652e2, #b4289c);
   border-image-slice: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
-  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c);
   background-origin: border-box;
   background-clip: content-box;
   -webkit-transition: 0.3s ease;
@@ -862,9 +861,13 @@
 }
 .case-box:hover {
   background-clip: content-box, border-box;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
+  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c);
 }
 .case-box:hover .recommended-article-card__link {
-  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .case-box-wrapper {
@@ -1109,6 +1112,7 @@
 }
 .btn-play img {
   width: 20px;
+  margin-right: -4px;
 }
 .btn-play:hover {
   background: #00b9ee;
@@ -1209,13 +1213,15 @@
   border-radius: 10px 10px 0 0;
 }
 
+.recommended-article {
+  margin: 0 0 100px;
+}
 .recommended-article h2 {
   margin: 0 0 30px;
 }
 
 .recommended-article-card {
   width: 100%;
-  min-height: 390px;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   padding: 1px;
@@ -1275,7 +1281,7 @@
   display: -ms-flexbox;
   display: flex;
   margin: 15px 0 0;
-  opacity: 0;
+  display: none;
   white-space: nowrap;
 }
 .recommended-article-card__link img {
@@ -1294,15 +1300,17 @@
   max-width: 255px;
 }
 .recommended-article-card:hover {
-  border-image-source: linear-gradient(to top, #3652e2, #b4289c);
+  border-image-source: linear-gradient(to right, #3652e2, #b4289c);
   border-image-slice: 1;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left bottom, left top, from(#3652e2), to(#b4289c));
-  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to top, #3652e2, #b4289c);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
+  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 .recommended-article-card:hover .recommended-article-card__link {
-  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .recommended-article-card-wrapper {
@@ -1365,8 +1373,7 @@
 .subscribe-article {
   position: relative;
   width: 100%;
-  height: 100%;
-  padding: 44px 14px 42px 29px;
+  padding: 36px 30px;
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31);
           box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31);
@@ -1441,22 +1448,18 @@
 }
 
 .tariffs-card {
-  padding: 2px;
   width: 100%;
   height: 100%;
+  padding: 2px;
   border-radius: 20px;
   border-style: solid;
-  border-image-source: linear-gradient(to right, #3652e2, #b4289c);
-  border-image-slice: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
-  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c);
-  background-origin: border-box;
-  background-clip: content-box;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   font-size: 17px;
+  z-index: 1;
 }
 .tariffs-card__wrapper {
+  background: #fff;
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31);
           box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31);
@@ -1517,37 +1520,15 @@
 }
 .tariffs-card .btn {
   margin: 66px 0 0;
-  padding: 2px;
-  border-width: 2px;
-  border-image-source: linear-gradient(to right, #3652e2, #b4289c);
-  border-image-slice: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
-  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c);
-  background-origin: border-box;
-  background-clip: content-box;
+  padding: 12px 24px;
   border-radius: 10px;
-}
-.tariffs-card .btn span {
-  padding: 10px 52px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   background: #00b9ee;
-  border-radius: 10px;
+  color: #fff;
 }
 .tariffs-card .btn:hover {
-  background-clip: content-box, border-box;
-}
-.tariffs-card .btn:hover span {
-  background: transparent;
-  color: #010101;
+  background-image: -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b5289b));
+  background-image: linear-gradient(to right, #3652e2, #b5289b);
+  color: #fff;
 }
 .tariffs-card .box-text {
   margin: 0 0 auto;
@@ -1571,6 +1552,11 @@
   padding: 0 0 0 10px;
 }
 .tariffs-card:hover {
+  border-image-source: linear-gradient(to right, #3652e2, #b4289c);
+  border-image-slice: 1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
+  background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c);
+  background-origin: border-box;
   background-clip: content-box, border-box;
 }
 .tariffs-card:hover .tariffs-card__head::before {
@@ -1583,17 +1569,10 @@
 .tariffs-card:hover .tariffs-card__head .img-hover {
   display: block;
 }
-.tariffs-card:hover .list-checkbox > li::before {
-  background: url("../img/check-white.svg") no-repeat center, -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b5289b));
-  background: url("../img/check-white.svg") no-repeat center, linear-gradient(to right, #3652e2, #b5289b);
-  background-size: 10px, cover;
-}
 .tariffs-card:hover .btn {
-  background-clip: content-box, border-box;
-}
-.tariffs-card:hover .btn span {
-  background: transparent;
-  color: #010101;
+  background-image: -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b5289b));
+  background-image: linear-gradient(to right, #3652e2, #b5289b);
+  color: #fff;
 }
 
 .through-analytics {
