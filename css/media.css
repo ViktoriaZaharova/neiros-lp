@@ -608,6 +608,23 @@
   .crm-integration-wrapper {
     height: 300px;
   }
+  .case-box:hover .case-box-wrapper {
+    position: relative;
+  }
+  .recommended-article-card:hover .recommended-article-card-wrapper {
+    position: relative;
+  }
+  .recommended-article-card .box-text {
+    max-width: none;
+    min-height: auto;
+    max-height: none;
+  }
+  .decor-image11 {
+    max-width: 140px;
+  }
+  .decor-image12 {
+    max-width: 100px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .form-search__header {

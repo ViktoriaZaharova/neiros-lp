@@ -26,10 +26,13 @@ header.fixed .form-registration button {
   right: 0;
   top: 0;
 }
-header.fixed .btn-border-gradient span {
-  color: #fff;
+header.fixed .btn-border-gradient {
   background: -webkit-gradient(linear, left top, right top, from(#3652e2), to(#b4289c));
   background: linear-gradient(to right, #3652e2, #b4289c);
+}
+header.fixed .btn-border-gradient span {
+  color: #fff;
+  background: transparent;
 }
 
 .logo {

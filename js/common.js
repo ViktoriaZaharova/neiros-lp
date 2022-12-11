@@ -8,6 +8,9 @@ $(document).ready(function () {
 
 	var scene3 = document.getElementById('scene3');
 	var parallaxInstance3 = new Parallax(scene3);
+
+	var scene4 = document.getElementById('scene4');
+	var parallaxInstance4 = new Parallax(scene4);
 });
 // parallax end
 
@@ -92,38 +95,17 @@ $('.nav-menu .dropdown-toggle').on('click', function () {
 $(".nav-menu .dropdown-toggle").one("click", false);
 
 
-$(document).ready(function () { //плавный скролл
-	$(".navigation-fixed li a").on("click", function (event) {
-		//отменяем стандартную обработку нажатия по ссылке
-		event.preventDefault();
-
-		$('.navigation-fixed').addClass('fixed');
-
-		$('.navigation-fixed li a').removeClass('active');
-		$(this).addClass('active');
-
-		//забираем идентификатор бока с атрибута href
-		var id = $(this).attr('href'),
-			headerHeight = $('header').height(),
-			//узнаем высоту от начала страницы до блока на который ссылается якорь
-			top = $(id).offset().top;
-
-		//анимируем переход на расстояние - top за 500 мс
-		$('body,html').animate({ scrollTop: top - headerHeight }, 500);
-
-	});
-});
-
 $(document).ready(function () {
 	var sections = $('.section'),
 		nav = $('.navigation-fixed'),
-		nav_height = nav.outerHeight();
+		nav_height = nav.outerHeight(),
+		header_height = $('header').outerHeight();
 
 	$(window).on('scroll', function () {
 		var cur_pos = $(this).scrollTop();
 
 		sections.each(function () {
-			var top = $(this).offset().top - nav_height,
+			var top = $(this).offset().top - nav_height - header_height - 10,
 				bottom = top + $(this).outerHeight();
 
 			if (cur_pos >= top && cur_pos <= bottom) {
@@ -136,17 +118,19 @@ $(document).ready(function () {
 		});
 	});
 
-	// nav.find('a').on('click', function () {
-	//     var $el = $(this)
-	//         , id = $el.attr('href');
-	//
-	//     $('html, body').animate({
-	//         scrollTop: $(id).offset().top - nav_height
-	//     }, 500);
-	//
-	//     return false;
-	// });
+	nav.find('a').on('click', function () {
+		$('.navigation-fixed').addClass('fixed');
+		var $el = $(this),
+			id = $el.attr('href');
+
+		$('html, body').animate({
+			scrollTop: $(id).offset().top - nav_height - header_height
+		}, 500);
+
+		return false;
+	});
 });
+
 
 $(document).ready(function () {
 	var block_show = null;

@@ -33,18 +33,12 @@
 	height: 56px
 	line-height: 56px
 	margin: 17px 0 0
-	// display: flex
-	// flex-direction: column
-	// justify-content: flex-start
-	// justify-content: flex-end
 	position: relative
 	span
-		// line-height: 56px
 		display: block
 		padding: 1px 16px
 		border-radius: 10px
 		background-color: #cdeff9
-		// height: 100%
 		width: fit-content
 		position: absolute
 		overflow: hidden
@@ -66,7 +60,7 @@
 		opacity: 0
 	5%
 		opacity: 0
-		transform: translateY(-50%)	
+		transform: translateY(-50%)
 	10%
 		opacity: 1
 		transform: translateY(0)
@@ -78,12 +72,11 @@
 		transform: translateY(50%)
 	40%
 		opacity: 0
-		transform: translateY(100%)	
+		transform: translateY(100%)
 	80%
 		opacity: 0
 	100%
-		opacity: 0			
-
+		opacity: 0
 
 .link-all-price
 	@include d-flex()
@@ -602,14 +595,7 @@
 .case-box
 	width: 100%
 	border-radius: 20px
-	box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31)
-	background-color: #fff
-	padding: 2px
-	border-style: solid
-	border-image-source: linear-gradient(to right, #3652e2, #b4289c)
-	border-image-slice: 0
-	background-origin: border-box
-	background-clip: content-box
+	position: relative
 	transition: .3s ease
 	&__img
 		@include d-flex()
@@ -628,6 +614,7 @@
 		margin: 0 0 17px
 		color: #010101
 		line-height: 0.83
+
 		&:hover
 			color: $accent
 	.box-text
@@ -650,16 +637,44 @@
 			display: block
 			margin: 13px 0 0
 	&:hover
-		background-clip: content-box, border-box
-		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
+		.case-box-wrapper
+			position: absolute
+			left: 0
+			top: 0
+			height: auto
+			background: #fff
+			z-index: 2
+			&::before
+				opacity: 1
 		.recommended-article-card__link
 			display: flex
 
 .case-box-wrapper
+	box-shadow: 0px 5px 15px 0 rgba(157, 157, 157, 0.31)
+	background-color: #fff
 	width: 100%
 	height: 100%
 	border-radius: 20px
 	padding: 11px 11px 18px
+	border-radius: 20px
+	z-index: 1
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		border-radius: 20px
+		padding: 2px
+		z-index: -1
+		border-image-source: linear-gradient(to right, #3652e2, #b4289c)
+		border-image-slice: 0
+		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
+		background-origin: border-box
+		background-clip: content-box, border-box
+		opacity: 0
+		// transition: .3s ease
 // cases end	
 
 // why-capabilities-analitycs	
@@ -919,17 +934,15 @@
 .recommended-article-card
 	width: 100%
 	transition: .3s ease
-	padding: 1px
 	border-radius: 20px
-	box-shadow: 0 5px 15px 0 rgba(157, 157, 157, 0.31)
-	background-color: #fff
 	position: relative
-	border: 1px solid transparent
+	// border: 1px solid transparent
 	.date
 		display: flex
 		align-items: center
 		color: #595959
 		font-size: 14px
+		width: 100%
 		.svg-icon
 			margin: 0 9px 0 0
 			width: 14px
@@ -966,17 +979,48 @@
 		line-height: 1.33
 		max-width: 255px
 	&:hover
-		border-image-source: linear-gradient(to right, #3652e2, #b4289c)
-		border-image-slice: 1
-		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
-		background-origin: border-box
-		background-clip: content-box, border-box
+		// border-image-source: linear-gradient(to right, #3652e2, #b4289c)
+		// border-image-slice: 1
+		// background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
+		// background-origin: border-box
+		// background-clip: content-box, border-box
 		.recommended-article-card__link
 			display: flex
+		.recommended-article-card-wrapper
+			position: absolute
+			left: 0
+			top: 0
+			height: auto
+			z-index: 2
+			&::before
+				opacity: 1
 
 .recommended-article-card-wrapper
 	width: 100%
+	height: 100%
 	padding: 14px
+	border-radius: 20px
+	padding: 14px
+	// position: relative
+
+	box-shadow: 0 5px 15px 0 rgba(157, 157, 157, 0.31)
+	background-color: #fff
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		border-radius: 20px
+		padding: 1px
+		z-index: -1
+		border-image-source: linear-gradient(to right, #3652e2, #b4289c)
+		border-image-slice: 0
+		background-image: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
+		background-origin: border-box
+		background-clip: content-box, border-box
+		opacity: 0
 
 .recommended-article-card__img
 	width: 100%
@@ -1156,11 +1200,26 @@
 				display: none
 			.img-hover
 				display: block
-		// .list-checkbox
-		// 	>li
-		// 		&::before
-		// 			background: url('../img/check-white.svg') no-repeat center, linear-gradient(to right, #3652e2, #b5289b)
-		// 			background-size: 10px, cover
+		.list-checkbox
+			>li
+			&__icon
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: 100%
+					// padding: 1px
+					border-style: solid
+					border-image-source: linear-gradient(to right, #3652e2, #b4289c)
+					border-image-slice: 0
+					background: linear-gradient(to bottom, #cdeff9, #cdeff9), linear-gradient(to right, #3652e2, #b4289c)
+					background-origin: border-box
+					background-clip: content-box, border-box
+					border-radius: 50%
+					// background: #cdeff9
+					z-index: -1
 		.btn
 			background-image: linear-gradient(to right, #3652e2, #b5289b)
 			color: #fff
