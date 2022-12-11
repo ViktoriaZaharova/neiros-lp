@@ -201,6 +201,9 @@
   .btn-burger {
     display: block;
   }
+  .crm-integration__content {
+    margin: 100px 0;
+  }
 }
 @media only screen and (max-width: 1100px) {
   .tariffs-card .price {
@@ -363,11 +366,10 @@
   .list-stages-settings .box-text {
     margin: 0;
   }
-  .crm-integration__content {
-    margin: 100px 0;
-  }
   .crm-integration-wrapper {
-    max-height: 500px;
+    height: 500px;
+    width: calc(100% + 30px);
+    margin: 0 -15px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -604,7 +606,7 @@
     font-size: 15px;
   }
   .crm-integration-wrapper {
-    max-height: 350px;
+    height: 300px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -679,10 +681,15 @@
     height: 250px;
   }
   .crm-integration-wrapper {
-    max-height: 300px;
+    height: 250px;
   }
   .crm-integration-wrapper:before, .crm-integration-wrapper:after {
     height: 70px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .parallax-window {
+    background-size: 400px;
   }
 }
 @media only screen and (min-width: 1200px) {

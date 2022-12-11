@@ -33,25 +33,57 @@
 	height: 56px
 	line-height: 56px
 	margin: 17px 0 0
-	display: flex
-	flex-direction: column
-	justify-content: flex-start
-	justify-content: flex-end
+	// display: flex
+	// flex-direction: column
+	// justify-content: flex-start
+	// justify-content: flex-end
+	position: relative
 	span
 		// line-height: 56px
 		display: block
 		padding: 1px 16px
 		border-radius: 10px
 		background-color: #cdeff9
-		height: 100%
+		// height: 100%
 		width: fit-content
-		animation: spin_words 3s infinite
+		position: absolute
+		overflow: hidden
+		opacity: 0
+		animation: text-animate 6s linear infinite
+		&:nth-child(2)
+			animation-delay: 2s
+		&:nth-child(3)
+			animation-delay: 4s
+		&:nth-child(4)
+			animation-delay: 6s
+		&:nth-child(5)
+			animation-delay: 8s	
+		&:nth-child(6)
+			animation-delay: 10s	
 
-@keyframes spin_words
-	50%
-		transform: translateY(100%)
+@keyframes text-animate
+	0%
+		opacity: 0
+	5%
+		opacity: 0
+		transform: translateY(-50%)	
+	10%
+		opacity: 1
+		transform: translateY(0)
+	25%
+		opacity: 1
+		transform: translateY(0)
+	30%
+		opacity: 0
+		transform: translateY(50%)
+	40%
+		opacity: 0
+		transform: translateY(100%)	
+	80%
+		opacity: 0
 	100%
-		transform: translateY(200%)
+		opacity: 0			
+
 
 .link-all-price
 	@include d-flex()
@@ -401,8 +433,8 @@
 .crm-integration-wrapper
 	width: 100%
 	height: 100%
-	max-height: 700px
-	// overflow: hidden
+	// max-height: 700px
+	overflow: hidden
 	position: relative
 
 	&::before, &::after
@@ -421,14 +453,17 @@
 		background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%)
 
 .parallax-window
+	position: absolute
+	top: 50%
+	left: 50%
 	width: 100%
 	height: 100%
 	display: flex
 	align-items: center
 	justify-content: center
-	background: url('../img/crm.svg') no-repeat center 
-	background-size: 100%
-
+	background: url('../img/crm-logos.png') no-repeat 50% 0
+	background-size: cover
+	transform: translate3d(0,0,0) translate(-50%,-50%)
 
 // stages-settings	
 .stages-settings

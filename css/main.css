@@ -40,52 +40,114 @@
   height: 56px;
   line-height: 56px;
   margin: 17px 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  position: relative;
 }
 .text-body span {
   display: block;
   padding: 1px 16px;
   border-radius: 10px;
   background-color: #cdeff9;
-  height: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation: spin_words 3s infinite;
-          animation: spin_words 3s infinite;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-animation: text-animate 6s linear infinite;
+          animation: text-animate 6s linear infinite;
+}
+.text-body span:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.text-body span:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+.text-body span:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+.text-body span:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+.text-body span:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
 }
 
-@-webkit-keyframes spin_words {
-  50% {
+@-webkit-keyframes text-animate {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  30% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  40% {
+    opacity: 0;
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
   }
+  80% {
+    opacity: 0;
+  }
   100% {
-    -webkit-transform: translateY(200%);
-            transform: translateY(200%);
+    opacity: 0;
   }
 }
 
-@keyframes spin_words {
-  50% {
+@keyframes text-animate {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  30% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  40% {
+    opacity: 0;
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
   }
+  80% {
+    opacity: 0;
+  }
   100% {
-    -webkit-transform: translateY(200%);
-            transform: translateY(200%);
+    opacity: 0;
   }
 }
 .link-all-price {
@@ -561,7 +623,7 @@
 .crm-integration-wrapper {
   width: 100%;
   height: 100%;
-  max-height: 700px;
+  overflow: hidden;
   position: relative;
 }
 .crm-integration-wrapper::before, .crm-integration-wrapper::after {
@@ -585,6 +647,9 @@
 }
 
 .parallax-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -596,8 +661,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url("../img/crm.svg") no-repeat center;
-  background-size: 100%;
+  background: url("../img/crm-logos.png") no-repeat 50% 0;
+  background-size: cover;
+  -webkit-transform: translate3d(0, 0, 0) translate(-50%, -50%);
+          transform: translate3d(0, 0, 0) translate(-50%, -50%);
 }
 
 .stages-settings {
