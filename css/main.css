@@ -53,28 +53,20 @@
   position: absolute;
   overflow: hidden;
   opacity: 0;
-  -webkit-animation: text-animate 6s linear infinite;
-          animation: text-animate 6s linear infinite;
+  -webkit-animation: text-animate 4.5s linear infinite;
+          animation: text-animate 4.5s linear infinite;
 }
 .text-body span:nth-child(2) {
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 .text-body span:nth-child(3) {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 .text-body span:nth-child(4) {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
-}
-.text-body span:nth-child(5) {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-}
-.text-body span:nth-child(6) {
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
 }
 
 @-webkit-keyframes text-animate {
