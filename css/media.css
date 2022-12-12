@@ -61,13 +61,13 @@
   .price span {
     font-size: 24px;
   }
+  .price-free span {
+    font-size: 22px;
+  }
   .tariffs {
     padding: 70px 0 40px;
   }
   .tariffs h2 {
-    margin: 0 0 30px;
-  }
-  .user-card {
     margin: 0 0 30px;
   }
   .why-capabilities-analitycs {

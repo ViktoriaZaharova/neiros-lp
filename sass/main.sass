@@ -129,7 +129,7 @@
 	justify-content: space-between
 	background: #fff
 	position: absolute
-	z-index: 2
+	z-index: 5
 	border-radius: 10px
 	box-shadow: 0px 14px 19.5px 1.5px rgba(37, 37, 37, 0.13)
 	padding: 7px
@@ -620,6 +620,11 @@
 	.box-text
 		font-size: 15px
 		line-height: 1.47
+		display: -webkit-box
+		text-overflow: ellipsis
+		-webkit-box-orient: vertical
+		-webkit-line-clamp: 5
+		overflow: hidden
 	&__subtitle
 		margin: 22px 0 19px
 		font-weight: bold
@@ -685,6 +690,7 @@
 
 .user-card
 	width: 100%
+	height: 100%
 	&__head
 		display: flex
 		align-items: center
@@ -703,6 +709,7 @@
 			object-fit: cover
 	&__body
 		width: 100%
+		height: calc(100% - 74px - 45px)
 		font-size: 15px
 		position: relative
 		border: 1px solid #00b9ee
@@ -720,6 +727,15 @@
 			border: 1px solid #00b9ee
 			border-bottom: none
 			background-color: #a8e7f9
+		&:after	
+			content: ''
+			position: absolute
+			background: #00b9ee
+			top: -33px
+			transform: rotate(-40deg)
+			height: 37px
+			width: 1px
+			left: 32px
 	&.no-active
 		opacity: 0.5
 		.user-card__body
@@ -728,6 +744,8 @@
 			&::before
 				border-color: transparent
 				background: #f2f7fc
+			&:after	
+				background: transparent	
 
 // why-capabilities-analitycs end	
 
@@ -1117,13 +1135,18 @@
 	h2
 		margin: 0 0 50px
 
+.price-free
+	font-size: 24px
+	font-weight: 500	
+	span
+		font-size: 24px	
+
 .tariffs-card
 	width: 100%
 	height: 100%
 	padding: 2px
 	border-radius: 20px
 	border-style: solid
-
 	transition: .3s ease
 	font-size: 17px
 	z-index: 1
@@ -1203,6 +1226,7 @@
 		.list-checkbox
 			>li
 			&__icon
+				background: #fff
 				&::after
 					content: ''
 					position: absolute
@@ -1210,16 +1234,26 @@
 					top: 0
 					width: 100%
 					height: 100%
-					// padding: 1px
 					border-style: solid
 					border-image-source: linear-gradient(to right, #3652e2, #b4289c)
 					border-image-slice: 0
-					background: linear-gradient(to bottom, #cdeff9, #cdeff9), linear-gradient(to right, #3652e2, #b4289c)
+					background: linear-gradient(to bottom, #fff, #fff), linear-gradient(to right, #3652e2, #b4289c)
 					background-origin: border-box
 					background-clip: content-box, border-box
 					border-radius: 50%
-					// background: #cdeff9
 					z-index: -1
+				img
+					display: none
+				&:before
+					content: ''
+					position: absolute
+					left: 50%
+					top: 50%
+					transform: translate(-50%,-50%)
+					width: 10px
+					height: 8px
+					background: url('../img/checked_gradient.svg') no-repeat center
+					background-size: 100%		
 		.btn
 			background-image: linear-gradient(to right, #3652e2, #b5289b)
 			color: #fff
