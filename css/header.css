@@ -3,7 +3,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 6;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
