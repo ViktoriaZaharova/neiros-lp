@@ -73,7 +73,7 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
-input, textarea, select {
+input, textarea, select, .form-control {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -92,22 +92,22 @@ input, textarea, select {
   color: #000;
   font-size: 15px;
 }
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder, .form-control::-webkit-input-placeholder {
   color: #595959;
 }
-input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder, .form-control::-moz-placeholder {
   color: #595959;
 }
-input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder, .form-control:-ms-input-placeholder {
   color: #595959;
 }
-input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
+input::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder, .form-control::-ms-input-placeholder {
   color: #595959;
 }
-input::placeholder, textarea::placeholder, select::placeholder {
+input::placeholder, textarea::placeholder, select::placeholder, .form-control::placeholder {
   color: #595959;
 }
-input:hover, input:focus, textarea:hover, textarea:focus, select:hover, select:focus {
+input:hover, input:focus, textarea:hover, textarea:focus, select:hover, select:focus, .form-control:hover, .form-control:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -506,6 +506,10 @@ a.color-blue:hover {
 
 .font-bold {
   font-weight: bold;
+}
+
+.list-inline > li {
+  display: inline-block;
 }
 
 .box-text {
